@@ -11,7 +11,6 @@ Solve a problem with c++ or JS
 using namespace std;
 int guardartexto();
 int imprimir_texto();
-int pause();
 int function_ingresa();
 fstream ficheroEntrada;
 ofstream ficheroSalida;
@@ -42,7 +41,7 @@ ficheroEntrada.open ( nombre.c_str() , ios::in);
  ficheroEntrada.close();
  ficheroSalida.close();
  
- MessageBox(NULL, "EL DOCUMENTO HA SIDO GUARDADO EN SU DISPOSITIVO COMO archivocreditos.txt\n", "CREDITOP", MB_OK);
+ MessageBox(NULL, "EL ARCHIVO archivocreditos.txt\n HA SIDO GUARDADO", "CREDITOP", MB_OK);
  system("cls");
 }
 else{
@@ -72,7 +71,7 @@ imprimir_texto(){
 
         ficheroEntrada.close();
     }
-    else cout << "Fichero inexistente o faltan permisos para abrirlo" << endl;  
+    else cout << "Fichero inexistente o faltan permisos" << endl;  
 }
 
 function_ingresa(){
@@ -83,7 +82,7 @@ cout<<"\n\t\t\tCREDITOP"<<endl;
 cout<<"INICIA SESION"<<endl;
 cout<<"\n\t USUARIO: ";
 getline(cin, user_estudiante);
-cout<<"\t CONTRASENA: ";
+cout<<"\t CONTRASEÑA: ";
 getline(cin, pass_estudiante);
 
 if(user_estudiante==USEREST && pass_estudiante==CONTRA){
@@ -104,15 +103,4 @@ else{
 }//fin do 
 while(ingresa==false && cont!=3);
 	cin.get();
-	pause();
 }//fin funcion ingresa
-
-pause(){
-	
-	cout<<"presione cualquier tecla para regresar al menu principal..."<<endl;
-	
-	getch();
-	
-	system("cls");
-	
-}
